@@ -36,3 +36,37 @@ saludar()
 # Después de llamar a la función
 
 # Explicación: Los decoradores modifican/complementan el comportamiento de funciones
+
+#* Crea un decorador que mida el tiempo de ejecución de una función.
+
+import time
+
+def medir_tiempo(func):
+    def wrapper(*args, **kwargs):
+        inicio = time.time()
+        resultado = func(*args, **kwargs)
+        fin = time.time()
+        print(f"Tiempo de ejecucion: {fin - inicio} segundos")
+        return resultado
+    return wrapper
+@medir_tiempo
+def calcular_suma(n):
+    suma = 0
+    for i in range(n):
+        suma += i
+        time.sleep(0.1)
+    return suma
+resultado = calcular_suma(10)
+print(f"Suma: {resultado}")
+
+#* Crea una función que reciba una lista y devuelva un diccionario 
+#* con el conteo de cada elemento único.
+
+def contar_elementos(lista):
+    conteo = {}
+    for elemento in lista:
+        conteo[elemento] = conteo.get(elemento, 0) + 1
+    return conteo
+
+print(contar_elementos(["a", "b", "a", "c", "b", "a"]))
+# Salida: {'a': 3, 'b': 2, 'c': 1}
