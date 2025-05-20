@@ -70,3 +70,20 @@ def contar_elementos(lista):
 
 print(contar_elementos(["a", "b", "a", "c", "b", "a"]))
 # Salida: {'a': 3, 'b': 2, 'c': 1}
+
+
+#* map
+numeros = [1, 2, 3, 4]
+cuadrados = list(map(lambda x: x ** 2, numeros))
+print(cuadrados)  # Salida: [1, 4, 9, 16]
+
+#* filter
+pares = list(filter(lambda x: x % 2 == 0, numeros))
+print(pares)  # Salida: [2, 4]
+
+#* reduce
+from functools import reduce
+suma = reduce(lambda x, y: x + y, numeros)
+print(suma)  # Salida: 10
+
+#* zip

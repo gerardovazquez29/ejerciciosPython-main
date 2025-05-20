@@ -1,0 +1,4 @@
+Hola, mundo!
+Este es un archivo de texto.
+Adiós, mundo!
+Esta línea se agrega al final del archivo.
